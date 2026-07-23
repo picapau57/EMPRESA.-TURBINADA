@@ -1,0 +1,6 @@
+{
+  "name": "Empresa Turbinada por IA",
+  "description": "Sistema e Landing Page para automação e serviços de IA corporativos",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

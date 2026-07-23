@@ -1,0 +1,124 @@
+import React, { useState } from 'react';
+import { X, CheckCircle2, Sparkles, Send } from 'lucide-react';
+import { LeadForm } from '../types';
+
+interface LeadModalProps {
+  onClose: () => void;
+}
+
+export function LeadModal({ onClose }: LeadModalProps) {
+  const [form, setForm] = useState<LeadForm>({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    interest: 'Atendimento e WhatsApp com IA'
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div class="bg-[#0d0d0d] border-2 border-[#ff3e00] w-full max-w-lg p-6 sm:p-8 relative shadow-2xl">
+        <button
+          onClick={onClose}
+          class="absolute top-4 right-4 text-white/50 hover:text-white p-1"
+        >
+          <X class="w-6 h-6" />
+        </button>
+
+        {!submitted ? (
+          <form onSubmit={handleSubmit} class="space-y-4">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#ff3e00]/10 text-[#ff3e00] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
+              <Sparkles class="w-3.5 h-3.5" /> DIAGNÓSTICO GRATUITO
+            </div>
+            <h3 class="text-2xl font-black uppercase tracking-tight">
+              Solicitar Projeto de IA
+            </h3>
+            <p class="text-xs text-white/60 font-mono">
+              Preencha os dados abaixo para receber um estudo de viabilidade técnica e proposta personalizada.
+            </p>
+
+            <div class="space-y-3 font-mono text-xs pt-2">
+              <div>
+                <label class="block text-white/70 mb-1 font-bold">Seu Nome:</label>
+                <input
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Ex: Carlos Silva"
+                  class="w-full bg-black border border-white/20 p-2.5 text-white focus:outline-none focus:border-[#ff3e00]"
+                />
+              </div>
+
+              <div>
+                <label class="block text-white/70 mb-1 font-bold">E-mail Profissional:</label>
+                <input
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="carlos@suaempresa.com.br"
+                  class="w-full bg-black border border-white/20 p-2.5 text-white focus:outline-none focus:border-[#ff3e00]"
+                />
+              </div>
+
+              <div>
+                <label class="block text-white/70 mb-1 font-bold">Nome da Empresa / WhatsApp:</label>
+                <input
+                  type="text"
+                  required
+                  value={form.company}
+                  onChange={(e) => setForm({ ...form, company: e.target.value })}
+                  placeholder="Empresa X - (11) 99999-9999"
+                  class="w-full bg-black border border-white/20 p-2.5 text-white focus:outline-none focus:border-[#ff3e00]"
+                />
+              </div>
+
+              <div>
+                <label class="block text-white/70 mb-1 font-bold">Principal Objetivo:</label>
+                <select
+                  value={form.interest}
+                  onChange={(e) => setForm({ ...form, interest: e.target.value })}
+                  class="w-full bg-black border border-white/20 p-2.5 text-white focus:outline-none focus:border-[#ff3e00]"
+                >
+                  <option>Atendimento e WhatsApp com IA</option>
+                  <option>Automação de Documentos & OCR</option>
+                  <option>CRM e Qualificação de Leads</option>
+                  <option>Migração e Hospedagem do Sistema na Vercel</option>
+                </select>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full mt-6 bg-[#ff3e00] text-white py-3.5 font-black uppercase text-xs tracking-wider hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+            >
+              Enviar Solicitação <Send class="w-4 h-4" />
+            </button>
+          </form>
+        ) : (
+          <div class="text-center py-8 space-y-4 font-mono">
+            <CheckCircle2 class="w-16 h-16 text-green-400 mx-auto animate-bounce" />
+            <h3 class="text-2xl font-black uppercase tracking-tight">Solicitação Recebida!</h3>
+            <p class="text-xs text-white/70 max-w-xs mx-auto">
+              Obrigado, <strong class="text-white">{form.name}</strong>. Nossa equipe entrará em contato em breve via WhatsApp com a análise prévia do seu projeto.
+            </p>
+            <button
+              onClick={onClose}
+              class="mt-4 bg-white text-black px-6 py-2 text-xs font-black uppercase tracking-wider hover:bg-[#ff3e00] hover:text-white transition-colors"
+            >
+              Fechar
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
