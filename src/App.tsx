@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { ROICalculator } from './components/ROICalculator';
+import { PricingPlans } from './components/PricingPlans';
 import { AIChatWidget } from './components/AIChatWidget';
 import { LeadModal } from './components/LeadModal';
 import { Footer } from './components/Footer';
@@ -24,6 +25,9 @@ export default function App() {
         <section id="solucoes">
           <Services onOpenLead={() => setIsLeadModalOpen(true)} />
         </section>
+
+        {/* Pricing Plans (Mercado Pago) */}
+        <PricingPlans onSelectPlan={() => setIsLeadModalOpen(false)} />
 
         {/* ROI Simulator */}
         <section id="simulador-roi">

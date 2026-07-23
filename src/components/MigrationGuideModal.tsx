@@ -250,12 +250,15 @@ export function MigrationGuideModal({ onExportZip }: MigrationGuideProps) {
                 <p className="text-[#888] text-[10px] mt-1">Siga as instruções na tela e aperte Enter. O site vai pro ar sem precisar do GitHub!</p>
               </div>
               <div>
-                <p className="text-white font-bold mb-1">Via Netlify (Arraste e Solte):</p>
-                <p className="text-white/70 text-[11px] mb-2">
-                  1. Acesse <a href="https://app.netlify.com/drop" target="_blank" className="text-[#ff3e00] underline font-bold">app.netlify.com/drop</a>.
+                <p className="text-white font-bold mb-1">Como ATUALIZAR no Netlify (sem GitHub):</p>
+                <p className="text-white/70 text-[11px] mb-1">
+                  1. No painel do Netlify, clique no seu site existente e vá na aba <strong>Deploys</strong> (<code className="text-[#ff3e00]">app.netlify.com/sites/SEU-SITE/deploys</code>).
                 </p>
                 <p className="text-white/70 text-[11px]">
-                  2. Arraste a pasta descompactada para a tela do navegador. O site fica online instantaneamente!
+                  2. Role até o final da página até encontrar o campo <strong>"Need to update your site? Drag and drop your site folder here"</strong>.
+                </p>
+                <p className="text-white/70 text-[11px] mt-1">
+                  3. Arraste a nova pasta atualizada para lá. O site atualizará mantendo o mesmo link!
                 </p>
               </div>
             </div>

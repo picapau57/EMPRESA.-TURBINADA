@@ -44,6 +44,13 @@ export function Header({ onOpenLead }: HeaderProps) {
           </button>
 
           <button
+            onClick={() => scrollToSection('planos')}
+            className="hover:text-[#ff3e00] transition-colors uppercase font-bold tracking-wider text-[#ff3e00]"
+          >
+            Planos & Preços
+          </button>
+
+          <button
             onClick={() => scrollToSection('simulador-roi')}
             className="hover:text-[#ff3e00] transition-colors uppercase font-bold tracking-wider"
           >
@@ -87,6 +94,13 @@ export function Header({ onOpenLead }: HeaderProps) {
             className="text-left text-white/80 hover:text-[#ff3e00] py-1 uppercase font-bold"
           >
             // Soluções de IA
+          </button>
+
+          <button
+            onClick={() => scrollToSection('planos')}
+            className="text-left text-[#ff3e00] hover:text-white py-1 uppercase font-bold"
+          >
+            // Planos & Assinatura (Mercado Pago)
           </button>
 
           <button
