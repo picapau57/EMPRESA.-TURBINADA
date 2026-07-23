@@ -47,50 +47,50 @@ const SERVICES: ServiceItem[] = [
 
 export function Services({ onOpenLead }: ServicesProps) {
   return (
-    <section class="py-16 px-4 sm:px-8 max-w-7xl mx-auto border-b border-white/10">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+    <section className="py-16 px-4 sm:px-8 max-w-7xl mx-auto border-b border-white/10">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
         <div>
-          <span class="text-xs font-mono font-bold text-[#ff3e00] uppercase tracking-widest block mb-2">
+          <span className="text-xs font-mono font-bold text-[#ff3e00] uppercase tracking-widest block mb-2">
             // ARQUITETURA DE SOLUÇÕES
           </span>
-          <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight">
             Módulos para Turbinar sua Operação
           </h2>
         </div>
-        <p class="text-sm font-mono text-white/50 max-w-md">
+        <p className="text-sm font-mono text-white/50 max-w-md">
           Sistemas modulares prontos para implementação rápida e hospedagem de alta performance na Vercel ou nuvem própria.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {SERVICES.map((service) => (
           <div
             key={service.id}
-            class="bg-white/5 border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:border-[#ff3e00] transition-all group relative overflow-hidden"
+            className="bg-white/5 border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:border-[#ff3e00] transition-all group relative overflow-hidden"
           >
-            <div class="space-y-4">
-              <div class="flex justify-between items-start">
-                <span class="text-[10px] font-mono font-bold px-2.5 py-1 bg-[#ff3e00]/10 text-[#ff3e00] border border-[#ff3e00]/20 uppercase">
+            <div className="space-y-4">
+              <div className="flex justify-between items-start">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 bg-[#ff3e00]/10 text-[#ff3e00] border border-[#ff3e00]/20 uppercase">
                   {service.category}
                 </span>
-                <span class="text-xs font-mono font-bold text-green-400 flex items-center gap-1">
-                  <CheckCircle class="w-3.5 h-3.5" /> {service.roiIncrease}
+                <span className="text-xs font-mono font-bold text-green-400 flex items-center gap-1">
+                  <CheckCircle className="w-3.5 h-3.5" /> {service.roiIncrease}
                 </span>
               </div>
 
-              <h3 class="text-2xl font-black uppercase tracking-tight group-hover:text-[#ff3e00] transition-colors">
+              <h3 className="text-2xl font-black uppercase tracking-tight group-hover:text-[#ff3e00] transition-colors">
                 {service.title}
               </h3>
 
-              <p class="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-white/70 leading-relaxed">
                 {service.description}
               </p>
 
-              <div class="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    class="text-[10px] font-mono px-2 py-0.5 bg-black/50 text-white/60 border border-white/10"
+                    className="text-[10px] font-mono px-2 py-0.5 bg-black/50 text-white/60 border border-white/10"
                   >
                     #{tag}
                   </span>
@@ -98,12 +98,12 @@ export function Services({ onOpenLead }: ServicesProps) {
               </div>
             </div>
 
-            <div class="pt-6 mt-6 border-t border-white/10 flex justify-between items-center">
+            <div className="pt-6 mt-6 border-t border-white/10 flex justify-between items-center">
               <button
                 onClick={onOpenLead}
-                class="text-xs font-black uppercase tracking-wider text-white group-hover:text-[#ff3e00] flex items-center gap-1 transition-colors"
+                className="text-xs font-black uppercase tracking-wider text-white group-hover:text-[#ff3e00] flex items-center gap-1 transition-colors"
               >
-                Implementar este Módulo <ArrowUpRight class="w-4 h-4" />
+                Implementar este Módulo <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
           </div>
